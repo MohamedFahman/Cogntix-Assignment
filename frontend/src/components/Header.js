@@ -33,6 +33,10 @@ const HeaderContainer = styled.header`
 const Nav = styled.nav`
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Adjust based on your design */
+  margin: 0 auto; /* Center the Nav content */
+  justify-content: space-between;
 `;
 
 const Logo = styled.div`
@@ -46,6 +50,8 @@ const NavMenu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-grow: 1;
+  justify-content: flex-start;
 `;
 
 const NavItem = styled.li`
@@ -55,11 +61,11 @@ const NavItem = styled.li`
 
 const Buttons = styled.div`
   display: flex;
+  gap: 12px;
 `;
 
 const Button = styled.button`
   padding: 10px 20px;
-  margin-left: 10px;
   border: none;
   background: ${(props) => (props.primary ? "#E63946" : "#fff")};
   color: ${(props) => (props.primary ? "#fff" : "#E63946")};

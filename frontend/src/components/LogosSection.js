@@ -1,35 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 
-const logos = [
-  "logo1.png",
-  "logo2.png",
-  "logo3.png",
-  // Add all logo images here
-];
-
 const LogosSection = () => {
   return (
     <LogosContainer>
-      {logos.map((logo, index) => (
-        <Logo key={index} src={logo} alt={`Logo ${index + 1}`} />
-      ))}
+      <Image src="/mobile/01.png" alt="01" />
+      <Image src="/mobile/02.png" alt="02" />
+      <Image src="/mobile/03.png" alt="03" />
+      <Image src="/mobile/04.png" alt="04" />
     </LogosContainer>
   );
 };
 
 const LogosContainer = styled.section`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* Distribute the logos evenly */
   align-items: center;
   padding: 20px 0;
   background: #fff;
-  flex-wrap: wrap;
+  gap: 20px; /* Optional: Add some gap between images */
 `;
 
-const Logo = styled.img`
-  max-height: 50px;
-  margin: 10px;
+const Image = styled.img`
+  width: 310px; /* Adjust the width as per your design */
+  height: 600; /* Maintain aspect ratio */
 `;
 
 export default LogosSection;

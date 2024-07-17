@@ -12,22 +12,26 @@ const HeroSection = () => {
         <Subtitle>Superfast Setup, Quick, Easy and No-Code</Subtitle>
         <Button>Build your website now</Button>
       </TextContainer>
-      <ImageContainer>
+      {/* <ImageContainer>
         <img src="hero-image.png" alt="Hero" />
-      </ImageContainer>
+      </ImageContainer> */}
     </HeroContainer>
   );
 };
 
 const HeroContainer = styled.section`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Change from row to column */
+  align-items: center; /* Center-align items horizontally */
+  justify-content: center; /* Center-align items vertically */
   padding: 50px 20px;
   background: #f7f7f7;
+  text-align: center; /* Center-align text */
 `;
 
 const TextContainer = styled.div`
   max-width: 600px;
+  margin-bottom: 30px; /* Add margin-bottom to separate text from the image */
 `;
 
 const Title = styled.h1`
@@ -60,11 +64,11 @@ const Button = styled.button`
   }
 `;
 
-const ImageContainer = styled.div`
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-`;
+// const ImageContainer = styled.div`
+//   img {
+//     max-width: 100%;
+//     height: auto;
+//   }
+// `;
 
 export default HeroSection;
