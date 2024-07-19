@@ -5,70 +5,72 @@ const HeroSection = () => {
   return (
     <HeroContainer>
       <TextContainer>
+        <Subtitle>Seamless Setup, Quick, Easy and No-Code</Subtitle>
         <Title>
           Build Website for your Business within{" "}
           <Highlight>3 Minutes</Highlight>
         </Title>
-        <Subtitle>Superfast Setup, Quick, Easy and No-Code</Subtitle>
-        <Button>Build your website now</Button>
+        <ButtonContainer>
+          <Button primary>Build your website now</Button>
+          <Button>Get a demo</Button>
+        </ButtonContainer>
       </TextContainer>
-      {/* <ImageContainer>
-        <img src="hero-image.png" alt="Hero" />
-      </ImageContainer> */}
     </HeroContainer>
   );
 };
 
 const HeroContainer = styled.section`
   display: flex;
-  flex-direction: column; /* Change from row to column */
-  align-items: center; /* Center-align items horizontally */
-  justify-content: center; /* Center-align items vertically */
-  padding: 50px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 10px;
   background: #f7f7f7;
-  text-align: center; /* Center-align text */
+  text-align: center;
 `;
 
 const TextContainer = styled.div`
-  max-width: 600px;
-  margin-bottom: 30px; /* Add margin-bottom to separate text from the image */
+  max-width: 800px;
+  margin-bottom: 20px;
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: 60px;
+  font-weight: bold;
   color: #333;
 `;
 
 const Highlight = styled.span`
   color: #e63946;
+  text-decoration: underline;
 `;
 
 const Subtitle = styled.p`
-  font-size: 24px;
-  color: #666;
-  margin: 20px 0;
+  font-size: 18px;
+  color: #e63946;
+  margin: 10px 0;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
 `;
 
 const Button = styled.button`
-  padding: 15px 30px;
-  border: none;
-  background: #e63946;
-  color: white;
+  padding: 15px 15px;
+  border: ${(props) => (props.primary ? "none" : "2px solid #e63946")};
+  background: ${(props) => (props.primary ? "#e63946" : "#fff")};
+  color: ${(props) => (props.primary ? "#fff" : "#e63946")};
   font-size: 18px;
   cursor: pointer;
   border-radius: 5px;
   transition: background 0.3s;
 
   &:hover {
-    background: #d62839;
+    background: ${(props) => (props.primary ? "#d62839" : "#f1f1f1")};
   }
 `;
-
-// const ImageContainer = styled.div`
-//   img {
-//     max-width: 100%;
-//     height: auto;
-//   }
-// `;
 
 export default HeroSection;

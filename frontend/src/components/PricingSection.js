@@ -4,20 +4,29 @@ import styled from "styled-components";
 const PricingSection = () => {
   return (
     <PricingContainer>
-      <SectionTitle>Perfect Balance of Features & Affordability</SectionTitle>
-      <SectionSubtitle>
-        Feasto simplifies creating a stunning, professional web store with its
-        user-friendly templates and quick setup. Our powerful features ensure a
-        seamless experience.
-      </SectionSubtitle>
-      <PricingToggle>
-        <span>Monthly</span>
-        <Toggle>
-          <input type="checkbox" id="toggle" />
-          <label htmlFor="toggle"></label>
-        </Toggle>
-        <span>Annually</span>
-      </PricingToggle>
+      <Header>
+        <HeaderLeft>
+          <SectionMainTitle>PRICING & PLANS</SectionMainTitle>
+          <SectionTitle>
+            Perfect Balance of Features & Affordability
+          </SectionTitle>
+          <SectionSubtitle>
+            Feasto simplifies creating a stunning, professional web store with
+            its user-friendly templates and quick setup. Our powerful features
+            ensure a seamless experience.
+          </SectionSubtitle>
+        </HeaderLeft>
+        <HeaderRight>
+          <PricingToggle>
+            <span>Monthly</span>
+            <Toggle>
+              <input type="checkbox" id="toggle" />
+              <label htmlFor="toggle"></label>
+            </Toggle>
+            <span>Annually</span>
+          </PricingToggle>
+        </HeaderRight>
+      </Header>
       <PricingPlans>
         <Plan>
           <PlanTitle>Free</PlanTitle>
@@ -52,7 +61,32 @@ const PricingSection = () => {
 const PricingContainer = styled.section`
   padding: 50px 20px;
   background: #f7f7f7;
-  text-align: center;
+`;
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+`;
+
+const HeaderLeft = styled.div`
+  flex: 1;
+  text-align: left;
+  margin-left: 120px;
+`;
+
+const HeaderRight = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 120px;
+`;
+
+const SectionMainTitle = styled.h5`
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: red;
 `;
 
 const SectionTitle = styled.h2`
@@ -60,21 +94,19 @@ const SectionTitle = styled.h2`
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
+  max-width: 500px;
 `;
 
 const SectionSubtitle = styled.p`
   font-size: 16px;
   color: #666;
-  margin-bottom: 40px;
-  max-width: 600px;
-  margin: 0 auto 40px;
+  max-width: 500px;
 `;
 
 const PricingToggle = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin-left: auto;
 
   span {
     font-size: 16px;
@@ -159,18 +191,15 @@ const PlanTitle = styled.h3`
 
 const OldPlanPrice = styled.p`
   font-size: 20px;
-  margin-bottom: 5px;
   text-decoration: line-through;
 `;
 
 const PlanPrice = styled.p`
   font-size: 36px;
-  margin-bottom: 5px;
 `;
 
 const PlanPeriod = styled.p`
   font-size: 16px;
-  margin-bottom: 20px;
   color: #ccc;
 `;
 
@@ -195,6 +224,7 @@ const PlanFeature = styled.p`
   margin: 10px 0;
   color: ${(props) => (props.disabled ? "#ccc" : "inherit")};
   text-decoration: ${(props) => (props.disabled ? "line-through" : "none")};
+  text-align: left;
 `;
 
 export default PricingSection;

@@ -128,7 +128,7 @@ const FooterLinksContainer = styled.div`
 const FooterLinksColumn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: left;
 `;
 
 const FooterLinkTitle = styled.h4`
@@ -136,6 +136,7 @@ const FooterLinkTitle = styled.h4`
   font-weight: bold;
   margin-bottom: 15px;
   color: #333;
+  text-align: left;
 `;
 
 const FooterLink = styled.a`

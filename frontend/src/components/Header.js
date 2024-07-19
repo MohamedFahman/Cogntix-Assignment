@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <HeaderContainer>
       <Nav>
-        <Logo>FEASTO</Logo>
-        <NavMenu>
+        <img src="Logo_Feasto.png" alt="Feasto Logo" />
+        <Hamburger onClick={toggleMenu}>
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </Hamburger>
+        <NavMenu isOpen={isOpen}>
           <NavItem>Features</NavItem>
           <NavItem>Pricing</NavItem>
           <NavItem>Templates</NavItem>
@@ -24,44 +34,67 @@ const Header = () => {
 const HeaderContainer = styled.header`
   padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
 `;
 
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Adjust based on your design */
-  margin: 0 auto; /* Center the Nav content */
+  max-width: 1200px;
+  margin: 0 auto;
   justify-content: space-between;
-`;
 
-const Logo = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-  color: #e63946;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 
 const NavMenu = styled.ul`
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 50px;
   flex-grow: 1;
   justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 const NavItem = styled.li`
   margin: 0 15px;
   font-size: 16px;
+  padding: 0 8px;
+  color: #333; /* Adjust text color as needed */
+
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const Buttons = styled.div`
   display: flex;
   gap: 12px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Button = styled.button`
@@ -76,6 +109,17 @@ const Button = styled.button`
 
   &:hover {
     background: ${(props) => (props.primary ? "#d62839" : "#f1f1f1")};
+  }
+`;
+
+const Hamburger = styled.div`
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+
+  @media (max-width: 768px) {
+    display: block;
   }
 `;
 

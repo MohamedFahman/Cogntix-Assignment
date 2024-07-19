@@ -16,14 +16,14 @@ const LogosContainer = styled.section`
   display: flex;
   justify-content: space-around; /* Distribute the logos evenly */
   align-items: center;
-  padding: 20px 0;
+  padding: 50px 0;
   background: #fff;
   gap: 20px; /* Optional: Add some gap between images */
 `;
 
 const Image = styled.img`
-  width: 310px; /* Adjust the width as per your design */
-  height: 600; /* Maintain aspect ratio */
+  width: 311px; /* Adjust the width as per your design */
+  height: 610; /* Maintain aspect ratio */
 `;
 
 export default LogosSection;

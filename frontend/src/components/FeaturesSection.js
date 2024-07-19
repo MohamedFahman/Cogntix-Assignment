@@ -1,79 +1,194 @@
 import React from "react";
 import styled from "styled-components";
-
-const features = [
-  {
-    image: "feature1.png",
-    title: "Launch your store in 3 mins",
-    description: "Easily launch your online store within minutes...",
-  },
-  {
-    image: "feature2.png",
-    title: "Faster payments",
-    description: "Quickly receive customer orders and payments...",
-  },
-  {
-    image: "feature3.png",
-    title: "Increased visibility",
-    description: "Boost your store’s visibility with our SEO tools...",
-  },
-];
+import { FaRocket, FaClock, FaChartLine, FaCogs } from "react-icons/fa";
 
 const FeaturesSection = () => {
   return (
-    <FeaturesContainer>
-      <SectionTitle>How FEASTO help your business grow?</SectionTitle>
-      <FeaturesList>
-        {features.map((feature, index) => (
-          <Feature key={index}>
-            <FeatureImage src={feature.image} alt={feature.title} />
-            <FeatureTitle>{feature.title}</FeatureTitle>
-            <FeatureDescription>{feature.description}</FeatureDescription>
-          </Feature>
-        ))}
-      </FeaturesList>
-    </FeaturesContainer>
+    <SectionContainer>
+      <ImageContainer>
+        <ImageBox>
+          <img src="./features/image-1.png" alt="Feature 1" />
+          <Overlay>
+            <OverlayText>Orders received</OverlayText>
+            <OverlayValue>124/day</OverlayValue>
+          </Overlay>
+        </ImageBox>
+        <ImageBox>
+          <img src="./features/image-2.png" alt="Feature 2" />
+          <Overlay>
+            <OverlayText>Deliveries completed</OverlayText>
+            <OverlayValue>85/day</OverlayValue>
+          </Overlay>
+        </ImageBox>
+        <ImageBox>
+          <img src="./features/image-3.png" alt="Feature 3" />
+          {/* <Overlay>
+            <OverlayText>Total customers</OverlayText>
+            <OverlayValue>10,456</OverlayValue>
+          </Overlay> */}
+        </ImageBox>
+        <ImageBox>
+          <img src="./features/image-4.png" alt="Feature 4" />
+          {/* <Overlay>
+            <OverlayText>Total customers</OverlayText>
+            <OverlayValue>10,456</OverlayValue>
+          </Overlay> */}
+        </ImageBox>
+      </ImageContainer>
+      <TextContainer>
+        <Subtitle>EXPLORE FEASTO</Subtitle>
+        <Title>
+          How <Highlight>FEASTO</Highlight> help your business grow?
+        </Title>
+        <Feature>
+          <FaRocket />
+          <div>
+            <FeatureTitle>Launch your store in 3 mins</FeatureTitle>
+            <FeatureDescription>
+              Easily launch your online store without coding and saving time.
+              Just choose a domain, add products, and start selling. It's that
+              simple!
+            </FeatureDescription>
+          </div>
+        </Feature>
+        <Feature>
+          <FaClock />
+          <div>
+            <FeatureTitle>Faster response time</FeatureTitle>
+            <FeatureDescription>
+              Quickly respond to customer queries and orders through WhatsApp,
+              boosting customer satisfaction and loyalty.
+            </FeatureDescription>
+          </div>
+        </Feature>
+        <Feature>
+          <FaChartLine />
+          <div>
+            <FeatureTitle>Increased visibility</FeatureTitle>
+            <FeatureDescription>
+              Expand your reach beyond physical locations with an online
+              storefront that’s accessible 24/7.
+            </FeatureDescription>
+          </div>
+        </Feature>
+        <Feature>
+          <FaCogs />
+          <div>
+            <FeatureTitle>Ultimate control over your storefront</FeatureTitle>
+            <FeatureDescription>
+              You can set your own opening hours, define delivery zones and
+              charges, select payment methods and handle offers effortlessly.
+            </FeatureDescription>
+          </div>
+        </Feature>
+      </TextContainer>
+    </SectionContainer>
   );
 };
 
-const FeaturesContainer = styled.section`
+const SectionContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 50px 20px;
   background: #f7f7f7;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 32px;
   text-align: center;
-  margin-bottom: 40px;
-  color: #333;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    text-align: left;
+  }
 `;
 
-const FeaturesList = styled.div`
+const ImageContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    margin-right: 30px;
+  }
+`;
+
+const ImageBox = styled.div`
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 200px;
+    height: auto;
+    display: block;
+  }
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+`;
+
+const OverlayText = styled.span`
+  font-size: 14px;
+`;
+
+const OverlayValue = styled.span`
+  font-size: 18px;
+`;
+
+const TextContainer = styled.div`
+  max-width: 600px;
+`;
+
+const Subtitle = styled.p`
+  font-size: 18px;
+  color: #e63946;
+  margin: 10px 0;
+`;
+
+const Title = styled.h1`
+  font-size: 42px;
+  color: #333;
+  margin-bottom: 30px;
+`;
+
+const Highlight = styled.span`
+  color: #e63946;
 `;
 
 const Feature = styled.div`
-  max-width: 300px;
-  text-align: center;
-  margin: 20px;
-`;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
 
-const FeatureImage = styled.img`
-  max-width: 100%;
-  height: auto;
+  svg {
+    font-size: 24px;
+    color: #e63946;
+    margin-right: 15px;
+  }
 `;
 
 const FeatureTitle = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   color: #333;
-  margin: 20px 0;
+  margin: 0 0 5px;
 `;
 
 const FeatureDescription = styled.p`
   font-size: 16px;
   color: #666;
+  margin: 0;
 `;
 
 export default FeaturesSection;

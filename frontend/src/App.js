@@ -8,6 +8,7 @@ import HeroSection from "./components/HeroSection";
 import LogosSection from "./components/LogosSection";
 import PricingSection from "./components/PricingSection";
 import TemplatesSection from "./components/TemplatesSection";
+import IconContainer from "./components/IconContainer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <HeroSection />
       <LogosSection />
+      <IconContainer />
       <FeaturesSection />
       <TemplatesSection />
       <PricingSection />
