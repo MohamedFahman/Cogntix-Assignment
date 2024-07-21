@@ -68,18 +68,32 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const HeaderLeft = styled.div`
   flex: 1;
   text-align: left;
   margin-left: 120px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const HeaderRight = styled.div`
   display: flex;
   align-items: center;
   margin-right: 120px;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 const SectionMainTitle = styled.h5`
@@ -90,17 +104,25 @@ const SectionMainTitle = styled.h5`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
-  max-width: 500px;
+  max-width: 550px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const SectionSubtitle = styled.p`
   font-size: 16px;
   color: #666;
   max-width: 500px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const PricingToggle = styled.div`
@@ -111,6 +133,10 @@ const PricingToggle = styled.div`
   span {
     font-size: 16px;
     margin: 0 10px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -168,6 +194,11 @@ const Plan = styled.div`
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+
+  @media (max-width: 768px) {
+    margin: 10px;
+    max-width: 100%;
+  }
 `;
 
 const PlanRibbon = styled.div`
@@ -182,25 +213,45 @@ const PlanRibbon = styled.div`
   border-radius: 3px;
   transform: rotate(45deg);
   z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 
 const PlanTitle = styled.h3`
   font-size: 24px;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const OldPlanPrice = styled.p`
   font-size: 20px;
   text-decoration: line-through;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const PlanPrice = styled.p`
   font-size: 36px;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
 `;
 
 const PlanPeriod = styled.p`
   font-size: 16px;
   color: #ccc;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const PlanButton = styled.button`
@@ -217,6 +268,10 @@ const PlanButton = styled.button`
   &:hover {
     background: ${(props) => (props.primary ? "#f1f1f1" : "#d62839")};
   }
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+  }
 `;
 
 const PlanFeature = styled.p`
@@ -225,6 +280,10 @@ const PlanFeature = styled.p`
   color: ${(props) => (props.disabled ? "#ccc" : "inherit")};
   text-decoration: ${(props) => (props.disabled ? "line-through" : "none")};
   text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export default PricingSection;

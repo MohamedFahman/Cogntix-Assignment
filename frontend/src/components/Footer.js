@@ -6,41 +6,45 @@ const Footer = () => {
     <FooterContainer>
       <FooterLinksContainer>
         <FooterTop>
-          <FooterLogo>FEASTO</FooterLogo>
-          <FooterDescription>
-            Feasto simplifies creating a stunning, professional web store with
-            its user-friendly templates and quick setup.
-          </FooterDescription>
-          <FooterSocials>
-            <SocialIcon
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/images/linkedin.png" alt="LinkedIn" />
-            </SocialIcon>
-            <SocialIcon
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/images/facebook.png" alt="Facebook" />
-            </SocialIcon>
-            <SocialIcon
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/images/instagram.png" alt="Instagram" />
-            </SocialIcon>
-            <SocialIcon
-              href="https://www.whatsapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="/images/whatsapp.png" alt="WhatsApp" />
-            </SocialIcon>
-          </FooterSocials>
+          <FooterLeft>
+            <FooterLogo>
+              <img src="./Logo_Feasto.png" alt="Feasto Logo" />
+            </FooterLogo>
+            <FooterDescription>
+              Feasto simplifies creating a stunning, professional web store with
+              its user-friendly templates and quick setup.
+            </FooterDescription>
+            <FooterSocials>
+              <SocialIcon
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/linkedin.png" alt="LinkedIn" />
+              </SocialIcon>
+              <SocialIcon
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/facebook.png" alt="Facebook" />
+              </SocialIcon>
+              <SocialIcon
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/instagram.png" alt="Instagram" />
+              </SocialIcon>
+              <SocialIcon
+                href="https://www.whatsapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/whatsapp.png" alt="WhatsApp" />
+              </SocialIcon>
+            </FooterSocials>
+          </FooterLeft>
         </FooterTop>
         <FooterLinksColumn>
           <FooterLinkTitle>Company</FooterLinkTitle>
@@ -85,29 +89,34 @@ const FooterContainer = styled.footer`
 
 const FooterTop = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
   margin-bottom: 25px;
   padding: 25px 20px;
 `;
 
+const FooterLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+`;
+
 const FooterLogo = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-  color: #e63946;
-  margin-bottom: 10px;
+  text-align: left;
 `;
 
 const FooterDescription = styled.p`
-  max-width: 600px;
+  max-width: 400px;
   margin-bottom: 20px;
   color: #666;
+  text-align: left;
 `;
 
 const FooterSocials = styled.div`
   display: flex;
   gap: 15px;
+  text-align: left;
 `;
 
 const SocialIcon = styled.a`
@@ -136,7 +145,6 @@ const FooterLinkTitle = styled.h4`
   font-weight: bold;
   margin-bottom: 15px;
   color: #333;
-  text-align: left;
 `;
 
 const FooterLink = styled.a`

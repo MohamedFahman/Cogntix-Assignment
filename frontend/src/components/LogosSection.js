@@ -14,16 +14,35 @@ const LogosSection = () => {
 
 const LogosContainer = styled.section`
   display: flex;
-  justify-content: space-around; /* Distribute the logos evenly */
+  justify-content: space-around;
   align-items: center;
   padding: 50px 0;
   background: #fff;
-  gap: 20px; /* Optional: Add some gap between images */
+  flex-wrap: wrap; /* Wrap the images to the next line if needed */
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 0;
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 const Image = styled.img`
-  width: 311px; /* Adjust the width as per your design */
-  height: 610; /* Maintain aspect ratio */
+  width: 311px;
+  height: auto; /* Maintain aspect ratio */
+
+  @media (max-width: 768px) {
+    width: 200px;
+  }
+
+  @media (max-width: 480px) {
+    width: 150px;
+  }
 `;
 
 export default LogosSection;

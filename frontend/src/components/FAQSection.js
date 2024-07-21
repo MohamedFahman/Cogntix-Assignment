@@ -4,6 +4,7 @@ import styled from "styled-components";
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
+  // Toggle the visibility of FAQ answer
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -69,9 +70,10 @@ const faqs = [
   },
 ];
 
+// Styled components
 const FAQContainer = styled.div`
   max-width: 900px;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 40px 20px;
   text-align: center;
 `;
@@ -101,8 +103,15 @@ const FAQList = styled.div`
 `;
 
 const FAQItem = styled.div`
-  border-top: 1px solid #eee;
-  padding: 15px 0;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #f9f9f9;
+  }
 `;
 
 const FAQQuestion = styled.div`
@@ -122,4 +131,5 @@ const FAQAnswer = styled.div`
   color: #666;
   text-align: left;
 `;
+
 export default FAQ;

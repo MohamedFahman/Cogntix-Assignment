@@ -38,15 +38,15 @@ const FeaturesSection = () => {
       <TextContainer>
         <Subtitle>EXPLORE FEASTO</Subtitle>
         <Title>
-          How <Highlight>FEASTO</Highlight> help your business grow?
+          How <Highlight>FEASTO</Highlight> helps your business grow?
         </Title>
         <Feature>
           <FaRocket />
           <div>
             <FeatureTitle>Launch your store in 3 mins</FeatureTitle>
             <FeatureDescription>
-              Easily launch your online store without coding and saving time.
-              Just choose a domain, add products, and start selling. It's that
+              Easily launch your online store without coding and save time. Just
+              choose a domain, add products, and start selling. It's that
               simple!
             </FeatureDescription>
           </div>
@@ -77,7 +77,7 @@ const FeaturesSection = () => {
             <FeatureTitle>Ultimate control over your storefront</FeatureTitle>
             <FeatureDescription>
               You can set your own opening hours, define delivery zones and
-              charges, select payment methods and handle offers effortlessly.
+              charges, select payment methods, and handle offers effortlessly.
             </FeatureDescription>
           </div>
         </Feature>
@@ -86,6 +86,7 @@ const FeaturesSection = () => {
   );
 };
 
+// Styled components
 const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
